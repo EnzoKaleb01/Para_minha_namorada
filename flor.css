@@ -1,0 +1,93 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #000; /* fundo preto */
+  overflow: hidden;
+}
+
+.rose-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.crystal-rose {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  animation: float 5s ease-in-out infinite;
+}
+
+.rose-center {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #ff5a7c, #b3002d);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 0, 64, 0.7), inset 0 0 10px rgba(255, 255, 255, 0.2);
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.petal {
+  position: absolute;
+  width: 100px;
+  height: 60px;
+  background: linear-gradient(135deg, #ff99b4, #b3002d);
+  border-radius: 50%;
+  opacity: 0.85;
+  box-shadow: 0 0 25px rgba(255, 0, 64, 0.4);
+  transform-origin: center center;
+  z-index: 1;
+}
+
+.petal1 { top: 40px; left: 50%; transform: translateX(-50%) rotate(0deg); }
+.petal2 { top: 50px; left: 50%; transform: translateX(-50%) rotate(60deg); }
+.petal3 { top: 50px; left: 50%; transform: translateX(-50%) rotate(120deg); }
+.petal4 { top: 60px; left: 50%; transform: translateX(-50%) rotate(180deg); }
+
+.stem {
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  width: 10px;
+  height: 130px;
+  background: linear-gradient(to bottom, #66ff99, #229966);
+  border-radius: 5px;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.leaf {
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  background: linear-gradient(to bottom left, #aaffcc, #229966);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.leaf1 {
+  top: 180px;
+  left: -40px;
+  transform: rotate(-30deg);
+}
+
+.leaf2 {
+  top: 200px;
+  right: -40px;
+  transform: rotate(30deg);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
